@@ -83,7 +83,7 @@ public class ControlerScene extends Application {
         stage.setY(10);
 
         if(fxml.equals("/fxml/welcome.fxml")) {
-            stage.setTitle("Welcome in DatApp");
+            stage.setTitle("view.Welcome in DatApp");
             stage.setWidth(450);
             stage.setHeight(280);
             scene.getStylesheets().add(App.class.getResource("/css/welcome.css").toExternalForm());

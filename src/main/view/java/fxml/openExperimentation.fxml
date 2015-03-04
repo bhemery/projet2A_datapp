@@ -6,26 +6,18 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TitledPane animated="false" layoutX="14.0" layoutY="14.0" prefHeight="120" prefWidth="250.0" text="Add a computing sequence">
+      <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="14.0" prefHeight="120" prefWidth="772.0" text="Add a computing sequence">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="779.0">
                <children>
                   <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="200.0" text="Create a computing sequence" />
                   <Button layoutX="20.0" layoutY="50.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="200.0" text="Load a computing sequence" />
-               </children></AnchorPane>
-        </content>
-      </TitledPane>
-
-      <TitledPane animated="false" layoutX="300.0" layoutY="14.0" prefHeight="120" prefWidth="500.0" text="Experimentation">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0">
-               <children>
-                  <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" text="Save an experimentation" />
-                  <Button layoutX="275.0" layoutY="14.0" mnemonicParsing="false" text="Load an experimentation" />
-                  <Label layoutX="38.0" layoutY="44.0" text="Results destination " />
-                  <TextField layoutX="280.0" layoutY="44.0" prefHeight="16.0" prefWidth="61.0" />
-                  <Button layoutX="356.0" layoutY="44.0" mnemonicParsing="false" text="Browse.." />
-                  <MenuButton layoutX="159.0" layoutY="44.0" mnemonicParsing="false" text="Format">
+                  <Button layoutX="305.0" layoutY="20.0" mnemonicParsing="false" text="Save an experimentation" />
+                  <Button layoutX="526.0" layoutY="20.0" mnemonicParsing="false" text="Load an experimentation" />
+                  <Label layoutX="274.0" layoutY="54.0" text="Results destination " />
+                  <TextField layoutX="600.0" layoutY="50.0" prefHeight="16.0" prefWidth="61.0" />
+                  <Button layoutX="526.0" layoutY="50.0" mnemonicParsing="false" text="Browse.." />
+                  <MenuButton layoutX="408.0" layoutY="50.0" mnemonicParsing="false" text="Format">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Action 1" />
                       <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -35,7 +27,7 @@
         </content>
       </TitledPane>
 
-      <TitledPane animated="false" layoutX="14.0" layoutY="163.0" prefHeight="370" prefWidth="250.0" text="Computing sequences">
+      <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="163.0" prefHeight="370" prefWidth="250.0" text="Computing sequences">
         <content>
             <AnchorPane minHeight="0.0" minWidth="0.0">
                 <children>
@@ -47,13 +39,13 @@
         </content>
       </TitledPane>
 
-      <TitledPane animated="false" layoutX="300.0" layoutY="163.0" prefHeight="370.0" prefWidth="500.0" text="Experimentation settings">
+      <TitledPane id="titledPaneSettings" animated="false" collapsible="false" layoutX="300.0" layoutY="163.0" prefHeight="370.0" prefWidth="500.0" text="Experimentation settings">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="500.0">
                <children>
                   <Pane layoutX="2.0" layoutY="-2.0" prefHeight="331.0" prefWidth="500.0">
                      <children>
-                        <TitledPane animated="false" layoutX="13.0" layoutY="208.0" prefHeight="120.0" prefWidth="474.0" text="Add an algorithm">
+                        <TitledPane animated="false" collapsible="false" layoutX="13.0" layoutY="208.0" prefHeight="120.0" prefWidth="474.0" text="Add an algorithm">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>

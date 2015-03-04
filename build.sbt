@@ -1,4 +1,4 @@
-name := "Exam_2014-2015"
+name := "Datapp"
 
 version := "1.0"
 

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import scala.App;
 
 /**
+ * @deprecated
  * Main Application. This class handles navigation and user session.
  */
 public class ControlerScene extends Application {

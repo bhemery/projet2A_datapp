@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="340.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="View.WelcomeController">
+  <children>
+    <Label layoutX="89.0" layoutY="59.0" mnemonicParsing="false" prefHeight="48.9609375" prefWidth="164.0" text="DatApp" textAlignment="CENTER" />
+    <Button fx:id="createExpButton" layoutX="71.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleCreateExperimentation" prefHeight="16.0" prefWidth="200.0" text="Create an experimentation" textAlignment="CENTER" />
+    <Button fx:id="openExpButton" layoutX="71.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleOpenExperimentation" prefHeight="16.0" prefWidth="200.0" text="Open an experimentation" textAlignment="CENTER" />
+    <Button fx:id="loadResultsButton" layoutX="71.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleLoadResults" prefHeight="16.0" prefWidth="200.0" text="Load an experimentation result" textAlignment="CENTER" />
+  </children>
+</Pane>

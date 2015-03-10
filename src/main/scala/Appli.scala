@@ -28,10 +28,6 @@ class Appli extends Application {
     val welcomeController = fxmlLoader.getController[WelcomeController]
     welcomeController.setController(workingController)
 
-
-
-
-
   }
 
 }

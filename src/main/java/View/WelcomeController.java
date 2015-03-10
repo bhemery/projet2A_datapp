@@ -22,7 +22,6 @@ public class WelcomeController implements Initializable {
 
 
 
-
     @FXML
     private Button createExpButton;
 
@@ -44,17 +43,19 @@ public class WelcomeController implements Initializable {
 
     @FXML
     private void handleCreateExperimentation(ActionEvent event) {
-        System.out.println("Click on \"Create An experimentation\"");
+        controller.receiveMessage("Click on \"Create An experimentation\"", this.toString());
+
+
     }
 
     @FXML
     private void handleOpenExperimentation(ActionEvent event) {
-        System.out.println("Click on \"Open An experimentation\"");
+        controller.receiveMessage("Click on \"Open An experimentation\"", this.toString());
     }
 
     @FXML
     private void handleLoadResults(ActionEvent event) {
-        System.out.println("Click on \"Load an experimentation result\"");
+        controller.receiveMessage("Click on \"Load an experimentation result\"", this.toString());
     }
 
 

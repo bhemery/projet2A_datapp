@@ -1,6 +1,7 @@
 package View;
 
 
+import Controller.GUIController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,11 +13,15 @@ import java.util.ResourceBundle;
 public class WelcomeController implements Initializable {
 
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+    private GUIController controller;
+
+    public void setController(GUIController controller) {
+        this.controller = controller;
+    }
+
+
+
 
     @FXML
     private Button createExpButton;
@@ -34,31 +39,21 @@ public class WelcomeController implements Initializable {
         assert loadResultsButton != null : "fx:id=\"loadResultsButton\" was not injected: check your FXML file 'welcome.fxml'.";
         assert openExpButton != null : "fx:id=\"openExpButton\" was not injected: check your FXML file 'welcome.fxml'.";
 
-        location = fxmlFileLocation ;
-        this.resources = resources;
-
-        System.out.println("WelcomeController: " + fxmlFileLocation);
-        System.out.println("WelcomeController: " + resources);
 
     }
-
-
 
     @FXML
     private void handleCreateExperimentation(ActionEvent event) {
         System.out.println("Click on \"Create An experimentation\"");
-        //ControlerScene.getInstance().gotoOpenExpPage();
     }
 
     @FXML
     private void handleOpenExperimentation(ActionEvent event) {
-        // TODO
         System.out.println("Click on \"Open An experimentation\"");
     }
 
     @FXML
     private void handleLoadResults(ActionEvent event) {
-        // TODO
         System.out.println("Click on \"Load an experimentation result\"");
     }
 

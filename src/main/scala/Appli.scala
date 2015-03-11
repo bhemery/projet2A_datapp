@@ -19,9 +19,11 @@ class Appli extends Application {
     val fxmlLoader = new FXMLLoader
     fxmlLoader.setLocation(getClass.getResource("/fxml/welcome.fxml"))
     fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory )
-    val root : Parent = fxmlLoader.load()
+    val root : Parent = fxmlLoader.load[Parent]
 
-    primaryStage.setScene( new Scene(root, 320, 200) )
+    val scene = new Scene(root, 320, 200)
+    scene.getStylesheets.add(getClass.getResource("/css/welcome.css").toExternalForm)
+    primaryStage.setScene( scene )
     primaryStage.setTitle("Welcome to DatApp")
     primaryStage.show
 

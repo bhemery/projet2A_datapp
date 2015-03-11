@@ -62,9 +62,13 @@ public class WelcomeController implements Initializable {
         }
 
         Stage stage = new Stage();
-        stage.setScene( new Scene(root, 850, 650) );
+        stage.setScene( new Scene(root, 810, 530) );
         stage.setTitle("Create a new experimentation");
         stage.show();
+
+        ManageExperimentationController expController = fxmlLoader.getController();
+        expController.setController(controller);
+
     }
 
     @FXML

@@ -4,30 +4,32 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageExperimentationController">
    <children>
+
       <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="14.0" prefHeight="120" prefWidth="772.0" text="Manage experimentation">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="779.0">
                <children>
-                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="200.0" text="Create a computing sequence" />
-                  <Button layoutX="20.0" layoutY="50.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="200.0" text="Load a computing sequence" />
-                  <Button layoutX="305.0" layoutY="20.0" mnemonicParsing="false" text="Save an experimentation" />
-                  <Button layoutX="526.0" layoutY="20.0" mnemonicParsing="false" text="Load an experimentation" />
-                  <Label layoutX="274.0" layoutY="54.0" text="Results destination " />
-                  <TextField layoutX="600.0" layoutY="50.0" prefHeight="16.0" prefWidth="61.0" />
-                  <Button layoutX="526.0" layoutY="50.0" mnemonicParsing="false" text="Browse.." />
-                  <MenuButton layoutX="408.0" layoutY="50.0" mnemonicParsing="false" text="Format">
+                  <Button fx:id="addCompSeq" onAction="#handleAddCompSeq" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="200.0" text="Add a computing sequence" />
+                  <Button layoutX="222.0" layoutY="14.0" mnemonicParsing="false" text="Save an experimentation" />
+                  <Button layoutX="378.0" layoutY="14.0" mnemonicParsing="false" text="Load an experimentation" />
+                  <Label layoutX="14.0" layoutY="54.0" text="Results destination " />
+                  <TextField layoutX="296.0" layoutY="50.0" prefHeight="25.0" prefWidth="470.0" />
+                  <Button layoutX="222.0" layoutY="50.0" mnemonicParsing="false" text="Browse.." />
+                  <MenuButton layoutX="144.0" layoutY="50.0" mnemonicParsing="false" text="Format">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Action 1" />
                       <MenuItem mnemonicParsing="false" text="Action 2" />
                     </items>
                   </MenuButton>
+                  <Button id="StartExperimentation" layoutX="600.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Start" />
+                  <Button id="StartExperimentation" layoutX="692.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Results" />
                </children></AnchorPane>
         </content>
       </TitledPane>
 
-      <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="163.0" prefHeight="370" prefWidth="250.0" text="Computing sequences">
+      <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="143.0" prefHeight="370" prefWidth="250.0" text="Computing sequences">
         <content>
             <AnchorPane minHeight="0.0" minWidth="0.0">
                 <children>
@@ -39,7 +41,7 @@
         </content>
       </TitledPane>
 
-      <TitledPane id="titledPaneSettings" animated="false" collapsible="false" layoutX="300.0" layoutY="163.0" prefHeight="370.0" prefWidth="500.0" text="Experimentation settings">
+      <TitledPane id="titledPaneSettings" animated="false" collapsible="false" layoutX="277.0" layoutY="143.0" prefHeight="370.0" prefWidth="518.0" text="Computing sequence settings">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="500.0">
                <children>
@@ -102,7 +104,5 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <Button id="StartExperimentation" layoutX="51.0" layoutY="550.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="176.0" text="Start an experimentation" />
-      <ProgressBar layoutX="51.0" layoutY="583.0" prefHeight="16.0" prefWidth="176.0" progress="0.0" />
    </children>
 </Pane>

@@ -14,7 +14,7 @@ class Appli extends Application {
 
   override def start(primaryStage: Stage): Unit = {
 
-    val workingController = new GUIController
+    val workingController = new GUIController(primaryStage)
 
     val fxmlLoader = new FXMLLoader
     fxmlLoader.setLocation(getClass.getResource("/fxml/welcome.fxml"))
@@ -25,15 +25,17 @@ class Appli extends Application {
     scene.getStylesheets.add(getClass.getResource("/css/welcome.css").toExternalForm)
     primaryStage.setScene( scene )
     primaryStage.setTitle("Welcome to DatApp")
+    // Taille minimale - remarque : taille différente entre scene et primaryStage.. pourquoi?
+    primaryStage.setMinWidth(320)
+    primaryStage.setMinHeight(230)
+
     primaryStage.show
 
     val welcomeController = fxmlLoader.getController[WelcomeController]
     welcomeController.setController(workingController)
 
   }
-
 }
-
 
 object Appli{
   def main(args: Array[String]) {

@@ -18,15 +18,11 @@ import java.util.ResourceBundle;
 
 public class WelcomeController implements Initializable {
 
-
-
     private GUIController controller;
 
     public void setController(GUIController controller) {
         this.controller = controller;
     }
-
-
 
     @FXML
     private Button createExpButton;
@@ -62,6 +58,9 @@ public class WelcomeController implements Initializable {
         }
 
         Stage stage = new Stage();
+        //Taille minimale
+        stage.setMinWidth(810);
+        stage.setMinHeight(550);
         stage.setScene( new Scene(root, 810, 530) );
         stage.setTitle("Create a new experimentation");
         stage.show();
@@ -83,10 +82,5 @@ public class WelcomeController implements Initializable {
         controller.receiveMessage("Click on \"Load an experimentation result\"", this.toString());
 
 
-
-
-
     }
-
-
 }

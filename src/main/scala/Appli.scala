@@ -21,13 +21,17 @@ class Appli extends Application {
     fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory )
     val root : Parent = fxmlLoader.load[Parent]
 
-    val scene = new Scene(root, 320, 200)
+    val width = 320
+    val height = 230
+    val borderheight = 30
+
+    val scene = new Scene(root, width, height - borderheight)
     scene.getStylesheets.add(getClass.getResource("/css/welcome.css").toExternalForm)
     primaryStage.setScene( scene )
     primaryStage.setTitle("Welcome to DatApp")
     // Taille minimale - remarque : taille différente entre scene et primaryStage.. pourquoi?
-    primaryStage.setMinWidth(320)
-    primaryStage.setMinHeight(230)
+    primaryStage.setMinWidth(width)
+    primaryStage.setMinHeight(height)
 
     primaryStage.show
 

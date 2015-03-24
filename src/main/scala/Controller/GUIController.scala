@@ -12,7 +12,7 @@ class GUIController (primaryStage: Stage){
   println("GUIController: Here I am!")
 
 
-  def receiveMessage(message : String, expediteur : String) = {
+  def receiveMessage(message : String, expediteur : String) : Unit = {
     println(s"Message recu (de la part de $expediteur): $message ")
     //if (message == "SequenceSettings")
     //  createSequenceSettings(primaryStage)

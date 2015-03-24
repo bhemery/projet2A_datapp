@@ -60,6 +60,7 @@ public class ManageExperimentationController implements Initializable {
 
         contentArea.getChildren().clear();
         contentArea.getChildren().add(root);
+        //remove d'un item -> clear du pane
     }
 
 }

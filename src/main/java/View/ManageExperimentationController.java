@@ -1,14 +1,20 @@
 package View;
+import java.io.IOException;
 import java.net.URL;
         import java.util.ResourceBundle;
 
 import Controller.GUIController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class ManageExperimentationController implements Initializable {
 
@@ -25,8 +31,7 @@ public class ManageExperimentationController implements Initializable {
 
     //iframe ici
     @FXML private Parent view;
-    @FXML private BorderPane contentArea;
-    @FXML private SettingsSequenceController page1Controller;
+    @FXML private Pane contentArea;
 
     @FXML
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -42,8 +47,19 @@ public class ManageExperimentationController implements Initializable {
     @FXML
     private void handleSeqSettings(ActionEvent event) {
         controller.receiveMessage("SequenceSettings", this.toString());
-        //contentArea.setCenter(page1Controller.getView());
-        //System.out.println("toto");
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxml/settingsSequence.fxml"));
+        fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory() );
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        contentArea.getChildren().clear();
+        contentArea.getChildren().add(root);
     }
 
 }

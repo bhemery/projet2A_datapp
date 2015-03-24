@@ -11,11 +11,7 @@ import java.util.ResourceBundle;
  * Created by anon on 19/03/2015.
  */
 public class SettingsSequenceController {
-    @FXML
-    private Node view;
 
-    public Node getView(){
-        return view;
-    }
+
 
 }

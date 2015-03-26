@@ -5,6 +5,7 @@ import javafx.application.Platform
 import javafx.fxml.{JavaFXBuilderFactory, FXMLLoader}
 import javafx.scene.{Scene, Parent}
 import javafx.stage.Stage
+import scala.language.implicitConversions
 
 import View.{ManageExperimentationController, SettingsSequenceController, WelcomeController}
 

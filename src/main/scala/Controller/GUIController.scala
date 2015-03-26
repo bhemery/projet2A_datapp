@@ -13,9 +13,8 @@ import scala.concurrent.Future
 
 class GUIController (primaryStage: Stage){
 
-  println("GUIController: Here I am!")
 
-  implicit def funToRunnable(fun : () => Unit) = new Runnable(){ def run() = fun() }
+  implicit def funToRunnable(fun : () => Unit) : Unit = new Runnable(){ def run() : Unit= fun() }
 
   def receiveMessage(message : String, expediteur : String) : Unit = {
     println(s"Message recu (de la part de $expediteur): $message ")

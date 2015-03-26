@@ -17,11 +17,11 @@ class Experimentation {
      // this.compSequenceList
   }
 
-  def LoadExperimentation: Unit ={
+  def loadExperimentation(): Unit ={
     //"experimentation"
   }
 
-  def saveExperimentation: Unit ={
+  def saveExperimentation(): Unit ={
     //TODO
   }
 

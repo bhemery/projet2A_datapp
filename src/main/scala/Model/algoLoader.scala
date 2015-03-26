@@ -7,9 +7,9 @@ package Model
  */
 class algoLoader {
 
-  val algos:List[String]
+  val algos:Map[String, String] = loadAlgorithms()
 
-  def getAlgorithms: List[String] ={
+  private def loadAlgorithms() : Map[String, String] ={
 
     //Creating an array for storing the algorithms names
 
@@ -22,8 +22,10 @@ class algoLoader {
     //returning the array.
 
     //utiliser les maps [String,String]
-    List("algorithm", "algo2")
+    Map("algo1" -> "Algorithms 1", "algo2"-> "Algorithms 2")
 
   }
+
+  def getAlgoName : List[String] = algos.keys.toList
 
 }

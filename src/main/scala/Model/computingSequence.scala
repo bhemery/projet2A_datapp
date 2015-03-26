@@ -2,7 +2,7 @@ package Model
 
 import weka.classifiers.AbstractClassifier
 import weka.core.converters.ConverterUtils.DataSource
-import weka.classifiers.
+//import weka.classifiers.
 
 /**
  * Created by anas on 26/03/15.

@@ -5,16 +5,14 @@ import java.net.URL;
 
 import Controller.GUIController;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.JavaFXBuilderFactory;
+import javafx.fxml.*;
+import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
+import javafx.stage.*;
 
 public class ManageExperimentationController implements Initializable {
 
@@ -28,9 +26,10 @@ public class ManageExperimentationController implements Initializable {
     private Button addCompSeq;
     @FXML
     private Button SeqSettings;
+    @FXML
+    private ListView computingSequencelist;
 
     //iframe ici
-    @FXML private Parent view;
     @FXML private Pane contentArea;
 
     @FXML
@@ -42,6 +41,38 @@ public class ManageExperimentationController implements Initializable {
     @FXML
     private void handleAddCompSeq(ActionEvent event) {
         controller.receiveMessage("Click on \"Add a computing sequence\"", this.toString());
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxml/newComputingSequence.fxml"));
+        fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory() );
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        NewSequenceController expController = fxmlLoader.getController();
+        expController.setController(controller);
+
+        Stage stage = new Stage();
+        int width = 500;
+        int height = 200;
+        //Taille minimale
+        stage.setMinWidth(width);
+        stage.setMinHeight(height);
+        stage.setScene( new Scene(root, width, height) );
+        stage.setTitle("Create a computing sequence");
+
+        // Fenetre modale
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+
+        stage.show();
+
+        //envoie de la lamba function
+        //controller.addComputingSequence();
+
     }
 
     @FXML
@@ -62,5 +93,4 @@ public class ManageExperimentationController implements Initializable {
         contentArea.getChildren().add(root);
         //remove d'un item -> clear du pane
     }
-
 }

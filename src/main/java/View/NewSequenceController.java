@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class NewSequenceController implements Initializable {
 
@@ -32,10 +33,18 @@ public class NewSequenceController implements Initializable {
 
     @FXML
     private void handleCancel(ActionEvent event) {
-        controller.receiveMessage("Click on \"Cancel\"", this.toString());
+        closeWindows();
     }
+
     @FXML
     private void handleValidation(ActionEvent event) {
-        controller.receiveMessage("Click on \"Validation\"", this.toString());
+        controller.receiveMessage(name.getText(), this.toString());
+        closeWindows();
+    }
+
+
+    private void closeWindows()  {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
 }

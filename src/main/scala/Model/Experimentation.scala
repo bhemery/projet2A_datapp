@@ -1,28 +1,33 @@
 package Model
 
-/**
- * Created by anas on 26/03/15.
- * Description:Class that contains the list of computing sequences and create it
- */
 class Experimentation {
 
-  var compSequenceList:List[computingSequence] = Nil //On peut utiliser un vecteur
+  private var computingSequences: List[ComputingSequence] = Nil
 
-  def startExperimentation(): Unit ={
-      //TODO
+  def startExperimentation(): Unit = {
+    // TODO a modifier pour effectivement faire le traitement.
+    println("Starting experiment")
+    computingSequences.foreach { computingSequence =>
+      println(s"  -${computingSequence.name}")
+    }
+    println("Experiment completed")
   }
 
-  def addComputingSequence(name : String): Unit ={
-    val computingSequence = new computingSequence(name)
-     compSequenceList = computingSequence :: compSequenceList
-  }
+  def getComputingSequencesNames(): List[String] =
+    computingSequences.map(_.name)
 
-  def loadExperimentation(fileName : String): Unit ={
+  def removeComputingSequence(name: String): Unit =
+    computingSequences = computingSequences.filterNot(_.name == name)
+
+  def addComputingSequence(name: String): Unit =
+    computingSequences = new ComputingSequence(name) :: computingSequences
+
+  def loadExperimentation(fileName: String): Unit = {
     //TODO
     //"experimentation"
   }
 
-  def saveExperimentation(fileName : String): Unit ={
+  def saveExperimentation(fileName: String): Unit = {
     //TODO
   }
 

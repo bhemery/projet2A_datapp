@@ -5,7 +5,7 @@ package Model
  * Description:Algorithm for loding the available algorithms in the weka.jar and the homefolder
  *            where Weka downloads all the new packages
  */
-class algoLoader {
+class AlgorithmLoader {
 
   val algos:Map[String, String] = loadAlgorithms()
 

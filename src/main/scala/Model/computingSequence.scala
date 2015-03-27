@@ -8,7 +8,7 @@ trait ValidationType
 case class CrossValidation(numberOfFold : Int) extends ValidationType
 case class SplitFile(percentage : Float) extends ValidationType
 
-class computingSequence(var name : String) {
+class ComputingSequence(var name : String) {
 
   var sourceTrain : Option[DataSource] = None //source of the computing sequence
   var sourceTest : Option[DataSource] = None

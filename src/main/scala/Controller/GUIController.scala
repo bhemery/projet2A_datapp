@@ -20,7 +20,6 @@ class GUIController() {
 
   private val experiment = new Experimentation()
 
-
   implicit def funToRunnable(fun: () => Unit): Runnable = new Runnable() {
     def run(): Unit = fun()
   }
@@ -29,11 +28,18 @@ class GUIController() {
     println(s"Message recu (de la part de $expediteur): $message ")
   }
 
-  def addComputingSequence(nom: String, lambda: Consumer[Array[String]]): Unit = Future {
+  def startExperimentation(): Unit =
+    experiment.startExperimentation()
 
+  def addComputingSequence(nom: String, lambda: Consumer[Array[String]]): Unit = Future {
     experiment.addComputingSequence(nom)
-    println(experiment.compSequenceList)
-    val experimentnames = experiment.compSequenceList.map(_.name)
+    val experimentnames = experiment.getComputingSequencesNames()
+    Platform.runLater(() => lambda.accept(experimentnames.toArray))
+  }
+
+  def removeComputingSequence(nom: String, lambda: Consumer[Array[String]]): Unit = Future {
+    experiment.removeComputingSequence(nom)
+    val experimentnames = experiment.getComputingSequencesNames()
     Platform.runLater(() => lambda.accept(experimentnames.toArray))
   }
 

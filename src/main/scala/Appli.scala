@@ -14,8 +14,6 @@ class Appli extends Application {
 
   override def start(primaryStage: Stage): Unit = {
 
-    val workingController = new GUIController(primaryStage)
-
     val fxmlLoader = new FXMLLoader
     fxmlLoader.setLocation(getClass.getResource("/fxml/welcome.fxml"))
     fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory )
@@ -34,10 +32,6 @@ class Appli extends Application {
     primaryStage.setMinHeight(height)
 
     primaryStage.show
-
-    val welcomeController = fxmlLoader.getController[WelcomeController]
-    welcomeController.setController(workingController)
-
   }
 }
 

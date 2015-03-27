@@ -4,6 +4,8 @@ import java.net.URL;
         import java.util.ResourceBundle;
 
 import Controller.GUIController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Node;
@@ -27,15 +29,15 @@ public class ManageExperimentationController implements Initializable {
     @FXML
     private Button SeqSettings;
     @FXML
-    private ListView computingSequencelist;
+    private ListView computingSequenceList;
 
     //iframe ici
     @FXML private Pane contentArea;
 
     @FXML
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        assert addCompSeq != null : "fx:id=\"addCompSeq\" was not injected: check your FXML file 'openExperimentation.fxml'.";
-        assert SeqSettings != null : "fx:id=\"SeqSettings\" was not injected: check your FXML file 'openExperimentation.fxml'.";
+        assert addCompSeq != null : "fx:id=\"addCompSeq\" was not injected: check your FXML file 'manageExperimentation.fxml'.";
+        assert SeqSettings != null : "fx:id=\"SeqSettings\" was not injected: check your FXML file 'manageExperimentation.fxml'.";
     }
 
     @FXML
@@ -52,8 +54,12 @@ public class ManageExperimentationController implements Initializable {
             e.printStackTrace();
         }
 
-        NewSequenceController expController = fxmlLoader.getController();
+        NewComputingSequenceController expController = fxmlLoader.getController();
         expController.setController(controller);
+        expController.setUpdateList(value -> {
+            ObservableList names = FXCollections.observableArrayList(value);
+            computingSequenceList.setItems(names);
+        });
 
         Stage stage = new Stage();
         int width = 500;

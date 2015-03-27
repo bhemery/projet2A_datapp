@@ -1,18 +1,20 @@
 package View;
+
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import java.util.function.Consumer;
 import Controller.GUIController;
-import javafx.event.ActionEvent;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NewSequenceController implements Initializable {
+public class NewComputingSequenceController implements Initializable {
 
     private GUIController controller;
+    private Consumer<String[]> lambda;
 
     public void setController(GUIController controller) {
         this.controller = controller;
@@ -32,19 +34,22 @@ public class NewSequenceController implements Initializable {
     }
 
     @FXML
-    private void handleCancel(ActionEvent event) {
+    private void handleCancel() {
         closeWindows();
     }
 
     @FXML
-    private void handleValidation(ActionEvent event) {
-        controller.receiveMessage(name.getText(), this.toString());
+    private void handleValidation() {
+        controller.addComputingSequence(name.getText(), lambda);
         closeWindows();
     }
-
 
     private void closeWindows()  {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void setUpdateList(Consumer<String[]> lambda) {
+        this.lambda = lambda;
     }
 }

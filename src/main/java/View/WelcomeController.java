@@ -18,12 +18,6 @@ import java.util.ResourceBundle;
 
 public class WelcomeController implements Initializable {
 
-    private GUIController controller;
-
-    public void setController(GUIController controller) {
-        this.controller = controller;
-    }
-
     @FXML
     private Button createExpButton;
 
@@ -45,10 +39,8 @@ public class WelcomeController implements Initializable {
 
     @FXML
     private void handleCreateExperimentation(ActionEvent event) {
-        controller.receiveMessage("Click on \"Create An experimentation\"", this.toString());
-
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/fxml/openExperimentation.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/fxml/manageExperimentation.fxml"));
         fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory() );
         Parent root = null;
         try {
@@ -66,21 +58,18 @@ public class WelcomeController implements Initializable {
         stage.show();
 
         ManageExperimentationController expController = fxmlLoader.getController();
-        expController.setController(controller);
+        GUIController workingController = new GUIController();
+        expController.setController(workingController);
 
     }
 
     @FXML
     private void handleOpenExperimentation(ActionEvent event) {
-        controller.receiveMessage("Click on \"Open An experimentation\"", this.toString());
-
 
     }
 
     @FXML
     private void handleLoadResults(ActionEvent event) {
-        controller.receiveMessage("Click on \"Load an experimentation result\"", this.toString());
-
 
     }
 }

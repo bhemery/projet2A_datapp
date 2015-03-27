@@ -12,16 +12,17 @@ class Experimentation {
       //TODO
   }
 
-  def addComputingSequence(computingSeq:computingSequence): Unit ={
-     //TODO
-     // this.compSequenceList
+  def addComputingSequence(name : String): Unit ={
+    val computingSequence = new computingSequence(name)
+     compSequenceList = computingSequence :: compSequenceList
   }
 
-  def loadExperimentation(): Unit ={
+  def loadExperimentation(fileName : String): Unit ={
+    //TODO
     //"experimentation"
   }
 
-  def saveExperimentation(): Unit ={
+  def saveExperimentation(fileName : String): Unit ={
     //TODO
   }
 

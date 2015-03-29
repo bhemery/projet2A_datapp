@@ -43,6 +43,11 @@ class GUIController() {
     Platform.runLater(() => lambda.accept(experimentnames.toArray))
   }
 
+  def duplicateComputingSequence(nom: String, lambda: Consumer[Array[String]]): Unit = Future {
+    //@todo dupliquer une sequence
+  }
+
+
   // Convertisseur de list de string en objet pr la liste de la vue
 
 

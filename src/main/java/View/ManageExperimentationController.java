@@ -116,6 +116,8 @@ public class ManageExperimentationController implements Initializable {
             });
         } catch (NullPointerException e) {
         }
-        contentArea.getChildren().clear();
+        // @fixme -> probleme lors du clear, la fenetre de settings réapparait.. :'( ajout de la condition ici
+        //if(computingSequenceList.getItems().size()==0) ??
+         contentArea.getChildren().clear();
     }
 }

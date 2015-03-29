@@ -23,15 +23,15 @@
                                             <children>
                                                 <Pane layoutX="9.0" layoutY="11.0" prefHeight="84.0" prefWidth="454.0">
                                                     <children>
-                                                        <Label layoutX="31.0" layoutY="11.0" text="Choose an algorithm" />
+                                                        <Label fx:id="algorithms_add" layoutX="31.0" layoutY="11.0" text="Choose an algorithm" />
                                                         <MenuButton layoutX="168.0" layoutY="11.0" mnemonicParsing="false" text="Algorithms">
                                                             <items>
                                                                 <MenuItem mnemonicParsing="false" text="Action 1" />
                                                                 <MenuItem mnemonicParsing="false" text="Action 2" />
                                                             </items>
                                                         </MenuButton>
-                                                        <Button layoutX="31.0" layoutY="44.0" mnemonicParsing="false" text="Add algorithm" />
-                                                        <Button layoutX="168.0" layoutY="44.0" mnemonicParsing="false" text="Configure" />
+                                                        <Button fx:id="addNewAlgorithm" layoutX="31.0" layoutY="44.0" mnemonicParsing="false" text="Add algorithm" />
+                                                        <Button fx:id="configureAlgo" layoutX="168.0" layoutY="44.0" mnemonicParsing="false" text="Configure" />
                                                     </children>
                                                 </Pane>
                                             </children></AnchorPane>
@@ -40,32 +40,33 @@
                                 <Pane layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="475.0">
                                     <children>
                                         <Label layoutX="31.0" layoutY="11.0" text="Learning data" />
-                                        <TextField layoutX="116.0" layoutY="11.0" prefHeight="16.0" prefWidth="80.0" />
-                                        <Button layoutX="220.0" layoutY="9.0" mnemonicParsing="false" text="Add a file" />
-                                        <Button layoutX="295.0" layoutY="11.0" mnemonicParsing="false" text="Add a DB" />
-                                        <Button layoutX="371.0" layoutY="11.0" mnemonicParsing="false" text="Add an URL" />
+                                        <TextField fx:id="field_learningData" layoutX="116.0" layoutY="11.0" prefHeight="16.0" prefWidth="80.0" />
+                                        <Button fx:id="addFile_learningData" layoutX="220.0" layoutY="9.0" mnemonicParsing="false" text="Add a file" />
+                                        <Button fx:id="addDB_learningData" layoutX="295.0" layoutY="11.0" mnemonicParsing="false" text="Add a DB" />
+                                        <Button fx:id="addURL_learningData" layoutX="371.0" layoutY="11.0" mnemonicParsing="false" text="Add an URL" />
                                     </children>
                                 </Pane>
                                 <Pane layoutX="17.0" layoutY="47.0" prefHeight="36.0" prefWidth="469.0">
                                     <children>
-                                        <Button layoutX="216.0" layoutY="10.0" mnemonicParsing="false" text="Add a file" />
-                                        <Button layoutX="293.0" layoutY="10.0" mnemonicParsing="false" text="Add a DB" />
-                                        <Button layoutX="369.0" layoutY="10.0" mnemonicParsing="false" text="Add an URL" />
                                         <Label layoutX="28.0" layoutY="10.0" text="Testing data" />
-                                        <MenuButton layoutX="106.0" layoutY="10.0" mnemonicParsing="false" text="Algorithms">
+                                        <MenuButton fx:id="algorithms_testingData" layoutX="106.0" layoutY="10.0" mnemonicParsing="false" text="Algorithms">
                                             <items>
                                                 <MenuItem mnemonicParsing="false" text="Action 1" />
                                                 <MenuItem mnemonicParsing="false" text="Action 2" />
                                             </items>
                                         </MenuButton>
+                                        <Button fx:id="addFile_testingData" layoutX="216.0" layoutY="10.0" mnemonicParsing="false" text="Add a file" />
+                                        <Button fx:id="addDB_testingData" layoutX="293.0" layoutY="10.0" mnemonicParsing="false" text="Add a DB" />
+                                        <Button fx:id="addURL_testingData" layoutX="369.0" layoutY="10.0" mnemonicParsing="false" text="Add an URL" />
+
                                     </children>
                                 </Pane>
                                 <Pane layoutX="17.0" layoutY="103.0" prefHeight="85.0" prefWidth="452.0">
                                     <children>
                                         <Label layoutX="29.0" layoutY="14.0" text="Number of iterations" />
                                         <Label layoutX="29.0" layoutY="46.0" text="Number of folds" />
-                                        <TextField layoutX="159.0" layoutY="14.0" prefHeight="16.0" prefWidth="30.0" />
-                                        <TextField layoutX="159.0" layoutY="46.0" prefHeight="16.0" prefWidth="30.0" />
+                                        <TextField fx:id="numberIterations" layoutX="159.0" layoutY="14.0" prefHeight="16.0" prefWidth="30.0" />
+                                        <TextField fx:id="numberFolds" layoutX="159.0" layoutY="46.0" prefHeight="16.0" prefWidth="30.0" />
                                     </children>
                                 </Pane>
                             </children>

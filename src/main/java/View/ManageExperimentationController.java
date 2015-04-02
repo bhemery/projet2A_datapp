@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.stage.*;
+import javafx.stage.Stage;
 
 public class ManageExperimentationController implements Initializable {
 
@@ -69,10 +70,13 @@ public class ManageExperimentationController implements Initializable {
         Stage stage = new Stage();
         int width = 500;
         int height = 200;
-        //Taille minimale
+
+        // Taille minimale
         stage.setMinWidth(width);
         stage.setMinHeight(height);
-        stage.setScene(new Scene(root, width, height));
+
+        Scene scene = new Scene(root, width, height);
+        stage.setScene(scene);
         stage.setTitle("Create a computing sequence");
 
         // Fenetre modale
@@ -103,6 +107,41 @@ public class ManageExperimentationController implements Initializable {
     @FXML
     public void handleStartExperimentation() {
         controller.startExperimentation();
+    }
+
+    @FXML
+    public void handleResultsExperimentation() {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxml/results.fxml"));
+        fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory() );
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+
+        int width = 810;
+        int height = 550;
+
+        //Taille minimale
+        stage.setMinWidth(width);
+        stage.setMinHeight(height);
+
+        // CSS
+        Scene scene = new Scene(root, width, height);
+        URL cssURL = getClass().getResource("/css/results.css");
+        scene.getStylesheets().add(cssURL.toExternalForm());
+
+        stage.setScene( scene );
+        stage.setTitle("Results of the experimentation");
+        stage.show();
+
+//        ManageExperimentationController expController = fxmlLoader.getController();
+//        GUIController workingController = new GUIController();
+//        expController.setController(workingController);
     }
 
     @FXML

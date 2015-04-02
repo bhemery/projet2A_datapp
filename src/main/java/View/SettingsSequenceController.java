@@ -69,7 +69,6 @@ public class SettingsSequenceController implements Initializable {
         assert configureAlgo != null : "fx:id=\"configureAlgo\" was not injected: check your FXML file 'settingsSequence.fxml'.";
     }
 
-
     @FXML
     public void handleAddNewAlgorithm() {
         //@todo

@@ -17,7 +17,7 @@
                     <children>
                         <Pane layoutX="2.0" layoutY="-2.0" prefHeight="331.0" prefWidth="500.0">
                             <children>
-                                <TitledPane animated="false" collapsible="false" layoutX="13.0" layoutY="208.0" prefHeight="120.0" prefWidth="474.0" text="Add an algorithm">
+                                <TitledPane animated="false" collapsible="false" layoutX="13.0" layoutY="208.0" prefHeight="120.0" prefWidth="474.0" text="Validation of the algorithm">
                                     <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                             <children>
@@ -30,7 +30,7 @@
                                                                 <MenuItem mnemonicParsing="false" text="Action 2" />
                                                             </items>
                                                         </MenuButton>
-                                                        <Button fx:id="addNewAlgorithm" layoutX="31.0" layoutY="44.0" mnemonicParsing="false" text="Add algorithm" />
+                                                        <Button fx:id="addNewAlgorithm" layoutX="31.0" layoutY="44.0" mnemonicParsing="false" text="Validation" />
                                                         <Button fx:id="configureAlgo" layoutX="168.0" layoutY="44.0" mnemonicParsing="false" text="Configure" />
                                                     </children>
                                                 </Pane>

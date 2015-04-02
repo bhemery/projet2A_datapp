@@ -27,14 +27,11 @@ public class WelcomeController implements Initializable {
     @FXML
     private Button openExpButton;
 
-
     @FXML
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         assert createExpButton != null : "fx:id=\"createExpButton\" was not injected: check your FXML file 'welcome.fxml'.";
         assert loadResultsButton != null : "fx:id=\"loadResultsButton\" was not injected: check your FXML file 'welcome.fxml'.";
         assert openExpButton != null : "fx:id=\"openExpButton\" was not injected: check your FXML file 'welcome.fxml'.";
-
-
     }
 
     @FXML
@@ -50,10 +47,20 @@ public class WelcomeController implements Initializable {
         }
 
         Stage stage = new Stage();
+
+        int width = 810;
+        int height = 550;
+
         //Taille minimale
-        stage.setMinWidth(810);
-        stage.setMinHeight(550);
-        stage.setScene( new Scene(root, 810, 530) );
+        stage.setMinWidth(width);
+        stage.setMinHeight(height);
+
+        // CSS
+        Scene scene = new Scene(root, width, height);
+        URL cssURL = getClass().getResource("/css/openExperimentation.css");
+        scene.getStylesheets().add(cssURL.toExternalForm());
+
+        stage.setScene( scene );
         stage.setTitle("Create a new experimentation");
         stage.show();
 
@@ -70,6 +77,6 @@ public class WelcomeController implements Initializable {
 
     @FXML
     private void handleLoadResults(ActionEvent event) {
-
+        // TODO
     }
 }

@@ -41,7 +41,7 @@
                                     <children>
                                         <Label layoutX="31.0" layoutY="11.0" text="Learning data" />
                                         <TextField fx:id="field_learningData" layoutX="116.0" layoutY="11.0" prefHeight="16.0" prefWidth="80.0" />
-                                        <Button fx:id="addFile_learningData" layoutX="220.0" layoutY="9.0" mnemonicParsing="false" text="Add a file" />
+                                        <Button fx:id="addFile_learningData" layoutX="220.0" layoutY="9.0" mnemonicParsing="false" text="Add a file" onAction="#handleOpenFileLearningData"/>
                                         <Button fx:id="addDB_learningData" layoutX="295.0" layoutY="11.0" mnemonicParsing="false" text="Add a DB" />
                                         <Button fx:id="addURL_learningData" layoutX="371.0" layoutY="11.0" mnemonicParsing="false" text="Add an URL" />
                                     </children>
@@ -55,7 +55,7 @@
                                                 <MenuItem mnemonicParsing="false" text="Action 2" />
                                             </items>
                                         </MenuButton>
-                                        <Button fx:id="addFile_testingData" layoutX="216.0" layoutY="10.0" mnemonicParsing="false" text="Add a file" />
+                                        <Button fx:id="addFile_testingData" layoutX="216.0" layoutY="10.0" mnemonicParsing="false" text="Add a file" onAction="#handleOpenFileTestingData"/>
                                         <Button fx:id="addDB_testingData" layoutX="293.0" layoutY="10.0" mnemonicParsing="false" text="Add a DB" />
                                         <Button fx:id="addURL_testingData" layoutX="369.0" layoutY="10.0" mnemonicParsing="false" text="Add an URL" />
 

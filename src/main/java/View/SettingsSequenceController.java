@@ -1,14 +1,23 @@
 package View;
 
 
+import Controller.GUIController;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import javafx.fxml.FXML;
+import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -78,4 +87,61 @@ public class SettingsSequenceController implements Initializable {
     public void handleConfigureAlgorithm() {
         //@todo
     }
+
+    @FXML
+    public void handleOpenFileTestingData() {
+        Stage stage = (Stage) this.addFile_testingData.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt"),
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+                new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+                new FileChooser.ExtensionFilter("All Files", "*.*"));
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if (selectedFile != null) {
+            stage.close();
+        }
+
+        int width = 810;
+        int height = 550;
+
+        //Taille minimale
+        stage.setMinWidth(width);
+        stage.setMinHeight(height);
+
+        stage.setTitle("Open a file");
+        stage.show();
+
+        //lancement de la partie modele
+    }
+
+    @FXML
+    public void handleOpenFileLearningData() {
+        Stage stage = (Stage) this.addFile_learningData.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt"),
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+                new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+                new FileChooser.ExtensionFilter("All Files", "*.*"));
+        File selectedFile = fileChooser.showOpenDialog(stage);
+        if (selectedFile != null) {
+            stage.close();
+        }
+
+        int width = 810;
+        int height = 550;
+
+        //Taille minimale
+        stage.setMinWidth(width);
+        stage.setMinHeight(height);
+
+        stage.setTitle("Open a file");
+        stage.show();
+
+        //lancement de la partie modele
+    }
+
 }

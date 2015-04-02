@@ -139,9 +139,6 @@ public class ManageExperimentationController implements Initializable {
         stage.setTitle("Results of the experimentation");
         stage.show();
 
-//        ManageExperimentationController expController = fxmlLoader.getController();
-//        GUIController workingController = new GUIController();
-//        expController.setController(workingController);
     }
 
     @FXML

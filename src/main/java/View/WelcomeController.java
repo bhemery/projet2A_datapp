@@ -35,7 +35,7 @@ public class WelcomeController implements Initializable {
     }
 
     @FXML
-    private void handleCreateExperimentation(ActionEvent event) {
+    private void handleCreateExperimentation() {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxml/manageExperimentation.fxml"));
         fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory() );

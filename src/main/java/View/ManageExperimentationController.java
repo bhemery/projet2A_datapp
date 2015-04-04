@@ -96,6 +96,7 @@ public class ManageExperimentationController implements Initializable {
 
             SettingsSequenceController control = fxmlLoader.getController();
             control.setComputingSequenceName(selectedComputingSequence);
+            control.setController(controller);
 
             contentArea.getChildren().clear();
             contentArea.getChildren().add(root);

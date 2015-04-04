@@ -23,11 +23,18 @@ import java.util.ResourceBundle;
 
 public class SettingsSequenceController implements Initializable {
 
+    private GUIController controller;
+    public void setController(GUIController controller) {
+        this.controller = controller;
+    }
+
     // @TODO -> utiles? a supprimer peut être??
     private String computingSequenceName;
     public void setComputingSequenceName(String name) {
         computingSequenceName = name;
     }
+
+
 
 
     @FXML
@@ -142,6 +149,42 @@ public class SettingsSequenceController implements Initializable {
         stage.show();
 
         //lancement de la partie modele
+    }
+
+    @FXML
+    private void handleAddAlgorithm() {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxml/configureAlgorithm.fxml"));
+        fxmlLoader.setBuilderFactory( new JavaFXBuilderFactory() );
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+
+        int width = 810;
+        int height = 550;
+
+        //Taille minimale
+        stage.setMinWidth(width);
+        stage.setMinHeight(height);
+
+        // CSS
+        Scene scene = new Scene(root, width, height);
+        URL cssURL = getClass().getResource("/css/configureAlgorithm.css");
+        scene.getStylesheets().add(cssURL.toExternalForm());
+
+        stage.setScene( scene );
+        stage.setTitle("Add an algorithm to the sequence");
+        stage.show();
+
+
+        ConfigureAlgorithmController confAlgoController = fxmlLoader.getController();
+        confAlgoController.setController(controller);
+
     }
 
 }
